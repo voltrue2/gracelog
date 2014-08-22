@@ -173,6 +173,12 @@ gracelog.on('output', function (address, name, level, messageObj) {
 
 ***
 
+###.clean(callback [function])
+
+Cleans up logging data.
+
+Useful to invoke this function before exiting an application process.
+
 ###.setPrefix(prefix [string])
 
 Sets a prefix for each logging.
