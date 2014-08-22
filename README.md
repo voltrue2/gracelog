@@ -2,7 +2,8 @@
 
 ###Access
 ```javascript
-var log = gracenode.log.create('nameToBeDisplayed');
+var gracelog = require('gracelog');
+var logger = gracelog.create('nameToBeDisplayed');
 ```
 
 ###Configurations
