@@ -1,3 +1,4 @@
+var assert = require('assert');
 var log = require('../');
 var logger;
 
@@ -8,7 +9,7 @@ describe('Logging', function () {
 		log.config({
 			bufferSize: 0,
 			color: true,
-			console: true,
+			console: false,
 			file: false,
 			level: '>= verbose'
 		});
@@ -32,10 +33,10 @@ describe('Logging', function () {
 	it('Can emit "output"', function (done) {
 		
 		log.on('output', function (address, name, level, msg) {
-			console.log('address:', address);
-			console.log('name:', name);
-			console.log('level:', level);
-			console.log('message:', msg);
+			assert(address);
+			assert(name);
+			assert(level);
+			assert(msg);
 			done();
 		});
 
