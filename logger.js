@@ -39,7 +39,7 @@ module.exports.clean = function (cb) {
 		module.exports.forceFlush,
 		file.destroyAllStreams
 	];
-	async.eachSeries(tasks, cb);
+	async.series(tasks, cb);
 };
 
 module.exports.forceFlush = function (cb) {
