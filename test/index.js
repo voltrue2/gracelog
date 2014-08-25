@@ -37,10 +37,17 @@ describe('Logging', function () {
 			assert(name);
 			assert(level);
 			assert(msg);
-			done();
+			if (level === 'fatal') {
+				done();
+			}
 		});
 
 		logger.verbose('test "output"');
+		logger.debug('test "output"');
+		logger.trace('test "output"');
+		logger.warn('test "output"');
+		logger.error('test "output"');
+		logger.fatal('test "output"');
 
 	});
 
