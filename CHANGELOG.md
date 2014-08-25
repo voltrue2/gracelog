@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.1.4
+
+## Added
+
+None
+
+## Changed
+
+## Readme updated
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.3
 
 ## Added
