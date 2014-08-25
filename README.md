@@ -1,4 +1,4 @@
-#gracenode.log
+#gracelog
 
 ###Access
 ```javascript
@@ -72,12 +72,6 @@ gracelog.config(configData);
 
 ***
 
-### trace()
-
-`.trace()` outputs a stack trace for debugging.
-
-***
-
 ### Buffering
 
 Log module buffers log data in memory before outputting.
@@ -88,7 +82,7 @@ The defualt buffer size is 8kb (8129 bytes) and default bufferFlushInterval is 5
 
 #### file
 
-If the path to file is set, gracenode will log into files.
+If the path to file is set, gracelog will log into files.
 
 Log files are auto-rotated by YYYY/MM/DD.
 
@@ -96,7 +90,7 @@ Log files are auto-rotated by YYYY/MM/DD.
 
 #### console
 
-If set to true, gracenode will send log to stdout stream of node.js process.
+If set to true, gracelog will send log to stdout stream of node.js process.
 
 Log module uses console object of node.js. This is a blocking operation. It is better to turn this option off in production.
 
@@ -104,7 +98,7 @@ Log module uses console object of node.js. This is a blocking operation. It is b
 
 #### color
 
-If set to true, gracenode will color log text.
+If set to true, gracelog will color log text.
 
 Each log level has different color.
 
@@ -112,7 +106,7 @@ Each log level has different color.
 
 #### showHidden
 
-If set to true, gracenode will log hidden properties of objects.
+If set to true, gracelog will log hidden properties of objects.
 
 `"showHidden": true or false`
 
@@ -124,7 +118,7 @@ Decides how far log module should recursively display objects.
 
 #### level
 
-Log module has 6 log levels. If set to false, gracenode will ignored that level.
+Log module has 6 log levels. If set to false, gracelog will ignored that level.
 
 Each log level can be configured.
 
@@ -165,7 +159,7 @@ Or
 ```
 gracelog.on('output', function (address, name, level, messageObj) {
 	// address: IP address of the server
-	// name: the name that was set on gracenode.log.create()
+	// name: the name that was set on gracelog.create()
 	// level: verbose, debug, info, warn, error, or fatal
 	// messageObj: { message, timestamp }
 });
@@ -210,6 +204,10 @@ void verbose(mixed data, [...])
 <pre>
 void debug(mixed data, [...])
 </pre>
+
+###API: *trace*
+
+`.trace()` outputs a stack trace for debugging.
 
 ###API: *info*
 
