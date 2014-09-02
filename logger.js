@@ -102,7 +102,7 @@ Logger.prototype.fatal = function () {
 
 Logger.prototype._handleLog = function (levelName, message) {
 	// if there is no config
-	if (!this.config || !Object.keys(this.config).length || !this.config.level) {
+	if (!this.config || !this.config.level) {
 		// no configurations for log module at all -> fall back to console
 		if (levelName === 'error' || levelName === 'fatal') {
 			console.error.apply(console, message);
@@ -119,10 +119,19 @@ Logger.prototype._handleLog = function (levelName, message) {
 	
 	// if console is enabled, we output to console
 	if (this.config.console) {
-		if (levelName === 'error') {
-			console.error(logMsg.message);
-		} else {
-			console.log(logMsg.message);
+		switch (levelName) {
+			case 'error':
+			case 'fatal':
+				console.error(logMsg.message);
+				break;
+			case 'warn':
+			case 'warning':
+				console.warn(logMsg.message);
+				break;
+			default:
+				console.log(logMsg.message);
+				break;
+			
 		}
 	}
 

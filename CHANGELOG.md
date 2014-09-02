@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.1.6
+
+## Added
+
+None
+
+## Changed
+
+#### Minor performance improvements
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.5
 
 ## Added
