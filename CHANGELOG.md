@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.1.7
+
+## Added
+
+None
+
+## Changed
+
+#### Text color changed
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.6
 
 ## Added

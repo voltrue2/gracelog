@@ -9,7 +9,7 @@ describe('Logging', function () {
 		log.config({
 			bufferSize: 0,
 			color: true,
-			console: false,
+			console: true,
 			file: false,
 			level: '>= verbose'
 		});
