@@ -1,5 +1,27 @@
 # Change log
 
+## Version 0.1.8
+
+## Added
+
+#### Added auto-creation of lost write stream if the target log files are removed or renamed
+
+This is file for logging.
+
+## Changed
+
+None
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.7
 
 ## Added
