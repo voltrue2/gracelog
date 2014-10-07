@@ -1,12 +1,12 @@
 # Change log
 
-## Version 0.1.9
+## Version 0.1.10
 
 ## Added
 
 #### Removed auto-creation of lost write stream for file logging added in version 0.1.8
 
-The added new feature in version 0.1.8 was unstable in different node version. Thus removed for now.
+The added new feature in version 0.1.8 was unstable in Linux Fedora. Thus removed for now.
 
 This is for file logging.
 
