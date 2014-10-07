@@ -8,7 +8,7 @@
 
 The added new feature in version 0.1.8 was unstable in different node version. Thus removed for now.
 
-This is file for logging.
+This is for file logging.
 
 ## Changed
 
