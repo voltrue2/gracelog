@@ -138,7 +138,7 @@ module.exports.create = function (name) {
 			}
 		}
 		if (callerFile) {
-			name = callerFile.substring(callerFile.lastIndexOf('(') + 1, callerFile.lastIndexOf('.'));
+			name = callerFile.substring(callerFile.indexOf('/'), callerFile.lastIndexOf('.'));
 		}
 	}
 

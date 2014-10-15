@@ -1,5 +1,35 @@
 # Change log
 
+## Version 0.1.13
+
+## Added
+
+None
+
+## Changed
+
+#### Fix to default log name in some cases
+
+The issue with file path containing no `(` solved.
+
+***
+
+## Version 0.1.11
+
+## Added
+
+None
+
+## Changed
+
+#### create function does not require log name any more.
+
+`gracelog.create([*logName])` does not require a `string` `logName`.
+
+If `logName` is not provided, `gracelog` will default the log name to the file name of the script calling `.create()`.
+
+***
+
 ## Version 0.1.12
 
 ## Added
