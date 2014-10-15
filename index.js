@@ -125,6 +125,20 @@ module.exports.create = function (name) {
 	} else if (appPrefix) {
 		p = appPrefix;
 	}
+
+	// if name is not given, try to get the name from the caller file name
+	if (!name) {
+		var stack = new Error('').stack.split('\n');
+		var callerFile = stack && stack[1] ? stack[1] : null;
+		if (callerFile) {
+			name = callerFile.substring(callerFile.lastIndexOf('(') + 1, callerFile.lastIndexOf('.'));
+		}
+	}
+
+	if (!name) {
+		name = 'unknown';
+	}
+
 	return loggerSource.create(p, name, configData);
 };
 

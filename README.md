@@ -181,9 +181,11 @@ Sets a prefix for each logging.
 
 Forcefully flushes all buffered log data and write immediately.
 
-###.create(logName [string])
+###.create(logName [*string])
 
 Returns an instance of logger object.
+
+If `logName` is not provided, it will default to the file name (full path) of script calling it.
 
 ###.isEnabled(levelName [string])
 

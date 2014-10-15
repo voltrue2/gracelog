@@ -1,5 +1,5 @@
 var assert = require('assert');
-var log = require('../');
+var log = require('gracelog');
 var logger;
 
 describe('Logging', function () {
@@ -49,6 +49,12 @@ describe('Logging', function () {
 		logger.error('test "output"');
 		logger.fatal('test "output"');
 
+	});
+
+	it('Can get a default log name', function (done) {
+		var logger2 = log.create();
+		logger2.debug('I am not "unkown!"');
+		done();
 	});
 
 });
