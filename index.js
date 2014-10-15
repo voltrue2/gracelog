@@ -129,7 +129,14 @@ module.exports.create = function (name) {
 	// if name is not given, try to get the name from the caller file name
 	if (!name) {
 		var stack = new Error('').stack.split('\n');
-		var callerFile = stack && stack[1] ? stack[1] : null;
+		var callerFile;
+		// i starts from one because index 0 is always "Error"
+		for (var i = 1, len = stack.length; i < len; i++) {
+			if (stack[i].indexOf('gracelog/index.js') === -1) {
+				callerFile = stack[i];
+				break;
+			}
+		}
 		if (callerFile) {
 			name = callerFile.substring(callerFile.lastIndexOf('(') + 1, callerFile.lastIndexOf('.'));
 		}

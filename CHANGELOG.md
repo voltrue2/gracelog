@@ -1,5 +1,17 @@
 # Change log
 
+## Version 0.1.12
+
+## Added
+
+None
+
+## Changed
+
+#### Default log name can now defect its own file name and ignores it
+
+***
+
 ## Version 0.1.11
 
 ## Added
@@ -13,6 +25,8 @@ None
 `gracelog.create([*logName])` does not require a `string` `logName`.
 
 If `logName` is not provided, `gracelog` will default the log name to the file name of the script calling `.create()`.
+
+***
 
 ## Version 0.1.10
 
