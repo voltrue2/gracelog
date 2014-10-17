@@ -12,16 +12,6 @@ None
 
 The issue with file path containing no `(` solved.
 
-***
-
-## Version 0.1.11
-
-## Added
-
-None
-
-## Changed
-
 #### create function does not require log name any more.
 
 `gracelog.create([*logName])` does not require a `string` `logName`.
@@ -38,7 +28,7 @@ None
 
 ## Changed
 
-#### Default log name can now defect its own file name and ignores it
+#### Default log name can now detect its own file name and ignores it
 
 ***
 
