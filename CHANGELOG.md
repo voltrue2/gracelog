@@ -12,12 +12,6 @@ None
 
 The issue with file path containing no `(` solved.
 
-#### create function does not require log name any more.
-
-`gracelog.create([*logName])` does not require a `string` `logName`.
-
-If `logName` is not provided, `gracelog` will default the log name to the file name of the script calling `.create()`.
-
 ***
 
 ## Version 0.1.12
