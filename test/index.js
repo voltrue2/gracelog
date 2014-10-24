@@ -57,4 +57,10 @@ describe('Logging', function () {
 		done();
 	});
 
+	it('Can log an object', function (done) {
+		var obj = require('../package.json');
+		logger.info(obj);
+		done();
+	});
+
 });

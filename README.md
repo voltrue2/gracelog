@@ -16,6 +16,7 @@ var configData = {
 	"bufferFlushInterval": <int> // log data buffer auto flush interval in milliseconds,
 	"file": "<log directory path> or false"
 	"console": true or false,
+	"remote": <object> or null/false,
 	"color": true or false,
 	"showHidden": true or false, // show hidden properties of object
 	"depth": <integer> // recursive depth of object
@@ -87,6 +88,23 @@ If the path to file is set, gracelog will log into files.
 Log files are auto-rotated by YYYY/MM/DD.
 
 `"file": "path to log file directory" or false/null`
+
+#### remote
+
+If the configurations for `remote` logging is provided, gracelog sends log data via UDP protocol.
+
+**Configurations**
+
+```
+var gracelog = require('gracelog');
+var configData = {
+	remote: {
+		host: 'localhost',
+		port: 8000
+	}
+};
+gracelog.config(configData);
+```
 
 #### console
 
