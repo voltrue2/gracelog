@@ -1,5 +1,19 @@
 # Change log
 
+## Version 0.1.14
+
+## Added
+
+None
+
+## Changed
+
+#### Update README for remote logging via UDP
+
+#### Added new unit tests
+
+***
+
 ## Version 0.1.13
 
 ## Added
