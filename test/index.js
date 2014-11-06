@@ -67,20 +67,24 @@ describe('Logging', function () {
 		var test = {
 			one: {
 				name: 'testOne',
-				value: 1
+				value: 1,
+				language: '日本語',
 			},
 			two: {
 				name: 'testTwo',
 				value: 2,
+				language: 'こんにちは',
 				ident: '02'
 			},
 			three: {
 				name: 'testThree',
-				value: 3
+				value: 3,
+				language: 'ありがとうございます',
 			},
 			four: {
 				name: 'testFour',
-				value: 4
+				value: 4,
+				language: '言葉'
 			},
 		};
 		var list = [1, 2, 3, 4, 5, 6];

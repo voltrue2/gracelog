@@ -1,5 +1,23 @@
 # Change log
 
+## Version 0.1.16
+
+## Added
+
+## Changed
+
+#### Support for multi-byte characters for .table()
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.15
 
 ## Added
