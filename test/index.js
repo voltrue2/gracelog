@@ -63,4 +63,28 @@ describe('Logging', function () {
 		done();
 	});
 
+	it('Can log as a table', function () {
+		var test = {
+			one: {
+				name: 'testOne',
+				value: 1
+			},
+			two: {
+				name: 'testTwo',
+				value: 2,
+				ident: '02'
+			},
+			three: {
+				name: 'testThree',
+				value: 3
+			},
+			four: {
+				name: 'testFour',
+				value: 4
+			},
+		};
+		var list = [1, 2, 3, 4, 5, 6];
+		logger.table(test, list, logger, 'test');
+	});
+
 });

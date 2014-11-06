@@ -1,5 +1,27 @@
 # Change log
 
+## Version 0.1.15
+
+## Added
+
+#### .table() added to output objects as tables
+
+The logging level is `debug`
+
+## Changed
+
+None
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.14
 
 ## Added

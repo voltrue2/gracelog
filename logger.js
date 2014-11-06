@@ -3,6 +3,7 @@ var ip = require('./lib/ip');
 var msg = require('./lib/msg');
 var file = require('./lib/file');
 var remote = require('./lib/remote');
+var Table = require('./lib/table');
 var buff = require('./buffer');
 var EventEmitter = require('events').EventEmitter;
 var events = new EventEmitter();
@@ -72,6 +73,10 @@ Logger.prototype.debug = function () {
 	this._handleLog.apply(this, ['debug', arguments]);
 };
 
+Logger.prototype.table = function () {
+	this._handleLog.apply(this, ['table', arguments]);
+};
+
 Logger.prototype.trace = function () {
 	var traceError = new Error('<stack trace>');
 	var trace = traceError.stack.replace('Error: ', '');
@@ -101,6 +106,16 @@ Logger.prototype.fatal = function () {
 };
 
 Logger.prototype._handleLog = function (levelName, message) {
+	// table is the same as debug
+	if (levelName === 'table') {
+		levelName = 'debug';
+		var list = [];
+		for (var i in message) {
+			var table = new Table(message[i]);
+			list.push(table.get());	
+		}
+		message = list;
+	}
 	// if there is no config
 	if (!this.config || !this.config.level) {
 		// no configurations for log module at all -> fall back to console

@@ -225,6 +225,14 @@ void verbose(mixed data, [...])
 void debug(mixed data, [...])
 </pre>
 
+###API: *table*
+
+<pre>
+void table(mixed data, [...])
+</pre>
+
+Outputs log at `debug` level and converts objects into tables.
+
 ###API: *trace*
 
 `.trace()` outputs a stack trace for debugging.
