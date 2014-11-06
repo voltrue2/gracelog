@@ -71,13 +71,13 @@ describe('Logging', function () {
 				language: '日本語',
 			},
 			two: {
-				name: 'testTwo',
+				name: 'testTwo<2>',
 				value: 2,
 				language: 'こんにちは',
 				ident: '02'
 			},
 			three: {
-				name: 'testThree',
+				name: 'testThree<3>',
 				value: 3,
 				language: 'ありがとうございます',
 			},
