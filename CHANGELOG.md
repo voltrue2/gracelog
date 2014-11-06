@@ -1,5 +1,27 @@
 # Change log
 
+## Version 0.1.17
+
+## Added
+
+## Changed
+
+#### Bug fix in .table
+
+Objects/arrays with different number of properties in each element created an incorrect tables.
+
+This has been fixed.
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.16
 
 ## Added

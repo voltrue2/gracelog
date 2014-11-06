@@ -72,7 +72,6 @@ describe('Logging', function () {
 			},
 			two: {
 				name: 'testTwo<2>',
-				value: 2,
 				language: 'こんにちは',
 				ident: '02'
 			},
@@ -80,15 +79,18 @@ describe('Logging', function () {
 				name: 'testThree<3>',
 				value: 3,
 				language: 'ありがとうございます',
+				list: ['A', 'B', 'C'],
+				map: { c: 'c', d: 'd' }
 			},
 			four: {
 				name: 'testFour',
 				value: 4,
-				language: '言葉'
+				language: '言葉',
+				map: { a: 'a', b: 'b' }
 			},
 		};
-		var list = [1, 2, 3, 4, 5, 6];
-		logger.table(test, list, logger, 'test');
+		var list = [1, 2, 3, 4, 5, 10, 123456];
+		logger.table(test, list, 'test');
 	});
 
 });
