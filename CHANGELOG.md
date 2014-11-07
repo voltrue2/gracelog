@@ -1,5 +1,23 @@
 # Change log
 
+## Version 0.1.18
+
+## Added
+
+## Changed
+
+#### Improved support for CJK characters for .table()
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.17
 
 ## Added

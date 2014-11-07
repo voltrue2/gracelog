@@ -85,9 +85,27 @@ describe('Logging', function () {
 			four: {
 				name: 'testFour',
 				value: 4,
-				language: '言葉',
+				language: 'Москве́',
 				map: { a: 'a', b: 'b' }
 			},
+			five: {
+				name: '魏民以夜光為怪石',
+				language: 'chinese'
+			},
+			six: {
+				name: 'korean',
+				value: -200,
+				language: '해빛',
+				list: [10, 20, 30]
+			},
+			seven: {
+				name: 'lorem ipsam',
+				value: '، ان بعد, ثم عدم وقامت الآلاف للمجهود',
+				language: 'arabic',
+				list: [5, 6],
+				map: { a: 500, b: 'd' },
+				ident: '0056'
+			}
 		};
 		var list = [1, 2, 3, 4, 5, 10, 123456];
 		logger.table(test, list, 'test');
