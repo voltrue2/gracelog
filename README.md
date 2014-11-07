@@ -270,7 +270,7 @@ logger.table(test);
 
 The output of the above code would be:
 
-**NOTE:** Spcing is off in this example, but the actual output would have correct spacing.
+**NOTE:** Spacing is off in this example, but the actual output would have correct spacing.
 
 ```
 +---------+--------------------+-----------------------------------------+------------------------+--------+----------+-----------------+
