@@ -34,7 +34,7 @@ module.exports.config = function (configIn) {
 	if (!configData.level) {
 		configData.level = '>= verbose';
 		console.warn('<warn>[log] no log level found: created default log level');
-		console.log('<verbose>[log] default configurations:\n', config);
+		console.log('<verbose>[log] default configurations:\n', configData);
 	}
 
 	if (configData.level && typeof configData.level === 'string') {

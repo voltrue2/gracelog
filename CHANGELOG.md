@@ -1,5 +1,27 @@
 # Change log
 
+## Version 0.1.19
+
+## Added
+
+None
+
+## Changed
+
+#### Bug fix in auto-default configurations
+
+The logging for auto-default configurations caused uncaught exception.
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.18
 
 ## Added
