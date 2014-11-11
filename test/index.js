@@ -9,9 +9,7 @@ describe('Logging', function () {
 		log.config({
 			bufferSize: 0,
 			color: true,
-			console: true,
-			file: false,
-			level: '>= verbose'
+			file: false
 		});
 
 		logger = log.create('test');

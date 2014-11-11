@@ -1,7 +1,7 @@
 {
 	"name": "gracelog",
 	"description": "Log management module",
-	"version": "0.1.19",
+	"version": "0.1.20",
 	"author": "Nobuyori Takahashi <voltrue2@yahoo.com>",
 	"repository": {
 		"type": "git",

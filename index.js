@@ -30,11 +30,16 @@ module.exports.config = function (configIn) {
 		});
 	}
 
+	// if config console is missing, we create it and set it to true as a default
+	if (configData.console === undefined) {
+		configData.console = true;
+		console.warn('<warn>[log] no logging method found: using "console" as the dedault');
+	}
+
 	// if config level is missing, we create a default one
 	if (!configData.level) {
 		configData.level = '>= verbose';
-		console.warn('<warn>[log] no log level found: created default log level');
-		console.log('<verbose>[log] default configurations:\n', configData);
+		console.warn('<warn>[log] no logging level found: using ">= verbose" as the dedault');
 	}
 
 	if (configData.level && typeof configData.level === 'string') {
