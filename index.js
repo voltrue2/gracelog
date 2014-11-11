@@ -31,7 +31,7 @@ module.exports.config = function (configIn) {
 	}
 
 	// if config console is missing, we create it and set it to true as a default
-	if (configData.console === undefined) {
+	if (configData.console === undefined && !configData.file && !configData.remote) {
 		configData.console = true;
 		console.warn('<warn>[log] no logging method found: using "console" as the dedault');
 	}

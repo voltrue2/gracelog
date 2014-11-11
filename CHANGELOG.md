@@ -1,5 +1,27 @@
 # Change log
 
+## Version 0.1.20
+
+## Added
+
+None
+
+## Changed
+
+#### Default config improved
+
+If no logging method found (console, file, or remote), it now falls back to use console as the default logging method.
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.19
 
 ## Added
