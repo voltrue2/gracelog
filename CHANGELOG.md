@@ -1,5 +1,27 @@
 # Change log
 
+## Version 0.1.21
+
+## Added
+
+None
+
+## Changed
+
+#### Bug fix in .table()
+
+The length of the (index) is now correctly measured.
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.20
 
 ## Added
