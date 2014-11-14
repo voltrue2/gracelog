@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.2.0
+
+## Added
+
+#### new dependency wcwidth added
+
+## Changed
+
+#### The character length issue with multibyte characters for .table() fixed
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.1.21
 
 ## Added
