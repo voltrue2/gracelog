@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.2.1
+
+## Added
+
+None
+
+## Changed
+
+#### Bug fix in .table() for 0 as a value
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.2.0
 
 ## Added

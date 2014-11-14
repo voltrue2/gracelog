@@ -64,16 +64,19 @@ describe('Logging', function () {
 	it('Can log as a table', function () {
 		var test = {
 			one: {
+				id: 0,
 				name: 'testOne',
 				value: 1,
 				language: '日本語',
 			},
 			two: {
+				id: 1,
 				name: 'testTwo<2>',
 				language: 'こんにちは',
 				ident: '02'
 			},
 			three: {
+				id: 2,
 				name: 'testThree<3>',
 				value: 3,
 				language: 'ありがとうございます',
@@ -81,6 +84,7 @@ describe('Logging', function () {
 				map: { c: 'c', d: 'd' }
 			},
 			four: {
+				id: 3,
 				name: 'testFour',
 				value: 4,
 				language: 'Москве́',
