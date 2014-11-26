@@ -113,4 +113,23 @@ describe('Logging', function () {
 		logger.table(test, list, 'test');
 	});
 
+	it('Can listen on "output" event 10 times and remove the listener', function (done) {
+		var counter = 0;
+		var max = 10;
+		var listener = function () {
+			counter += 1;
+			if (counter === max) {
+				log.removeListener('output', listener);
+				done();
+			}
+			logger.verbose('foo', counter);
+		};
+		log.on('output', listener);
+		logger.verbose('foo', counter);
+	});
+
+	it('Can log a null value in a same line', function () {
+		logger.debug('this is a null', null);
+	});
+
 });

@@ -75,7 +75,7 @@ gracelog.config(configData);
 
 ### Buffering
 
-Log module buffers log data in memory before outputting.
+Log module buffers log data in memory before outputting into file/remote/console.
 
 The defualt buffer size is 8kb (8129 bytes) and default bufferFlushInterval is 5 seconds (5000 ms).
 
@@ -108,7 +108,7 @@ gracelog.config(configData);
 
 #### console
 
-If set to true, gracelog will send log to stdout stream of node.js process.
+If set to true, gracelog will send log to stdout/stderr stream of your application's process.
 
 Log module uses console object of node.js. This is a blocking operation. It is better to turn this option off in production.
 

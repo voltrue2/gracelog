@@ -1,5 +1,27 @@
 # Change log
 
+## Version 0.2.2
+
+## Added
+
+None
+
+## Changed
+
+#### logging a null value in the same line
+
+#### Now uses wrapper functions for events instead of creating extra events
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.2.1
 
 ## Added

@@ -1,15 +1,30 @@
 var loggerSource = require('./logger');
-var EventEmitter = require('events').EventEmitter;
+//var EventEmitter = require('events').EventEmitter;
 
 var configData = null;
 var prefix = '';
 var appPrefix = '';
 
-module.exports = new EventEmitter();
+module.exports.on = function (eventName, cb) {
+	loggerSource.events.on(eventName, cb);
+};
 
-loggerSource.events.on('output', function (address, name, level, data) {
-	module.exports.emit('output', address, name, level, data);
-});
+module.exports.once = function (eventName, cb) {
+	loggerSource.events.once(eventName, cb);
+};
+
+module.exports.removeListener = function (eventName, cb) {
+	return loggerSource.events.removeListener(eventName, cb);
+};
+
+module.exports.removeAll = function (eventName) {
+	loggerSource.events.removeAll(eventName);
+};
+
+module.exports.hasListener = function (eventName) {
+	return loggersource.events.hasListener(eventName);
+};
+
 
 module.exports.config = function (configIn) {
 	
