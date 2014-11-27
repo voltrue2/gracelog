@@ -129,7 +129,11 @@ describe('Logging', function () {
 	});
 
 	it('Can log a null value in a same line', function () {
-		logger.debug('this is a null', null);
+		logger.debug('this is a null >', null);
+	});
+
+	it('Can log an undefined value in a same line', function () {
+		logger.debug('this is a null >', undefined);
 	});
 
 });

@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.2.3
+
+## Added
+
+None
+
+## Changed
+
+#### outputs null and undefined
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.2.2
 
 ## Added
