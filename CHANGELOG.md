@@ -1,5 +1,29 @@
 # Change log
 
+## Version 0.3.0
+
+## Added
+
+#### Added useTimestamp to configuration object
+
+By given `useTimestamp`(Boolean) in the configuration object, the logger users Unix timestamp instead of the server local time.
+
+**NOTE**: File rotation still uses server local time for file names.
+
+## Changed
+
+None
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+*** 
+
 ## Version 0.2.3
 
 ## Added

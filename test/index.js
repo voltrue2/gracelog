@@ -9,7 +9,8 @@ describe('Logging', function () {
 		log.config({
 			bufferSize: 0,
 			color: true,
-			file: false
+			file: false,
+			useTimestamp: true
 		});
 
 		logger = log.create('test');
