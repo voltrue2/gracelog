@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.4.0
+
+## Added
+
+None
+
+## Changed
+
+#### Log file rotation name is now accurate to the log data in each file
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.3.0
 
 ## Added

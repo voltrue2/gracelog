@@ -160,7 +160,9 @@ Logger.prototype._handleLog = function (levelName, message) {
 
 Logger.prototype._outputLog = function (levelName, bufferedMsg) {
 	if (this.config.file) {
-		file.log(levelName, bufferedMsg.messages.join('\n'));
+		// we pass bufferedMsg object instead of stringified bufferedMsg.messages
+		// to make sure the log rotation is done accurately
+		file.log(levelName, bufferedMsg);
 	}
 	if (this.config.remote) {
 		remote.log(levelName, bufferedMsg.messages.join('\n'));
