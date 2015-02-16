@@ -190,7 +190,7 @@ Logger.prototype._autoFlush = function (cb) {
 		var data = flushed[level];
 		var fileLog = function (next) {
 			if (that.config.file) {
-				return file.log(level, data.messages.join('\n'), next);
+				return file.log(level, data, next);
 			}
 			next();
 		};
