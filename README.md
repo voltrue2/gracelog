@@ -1,14 +1,14 @@
-#gracelog
+# gracelog
 
-###Access
+### Access
 ```javascript
 var gracelog = require('gracelog');
 var logger = gracelog.create('nameToBeDisplayed');
 ```
 
-###Configurations
+### Configurations
 
-###.config(configData [object])
+### .config(configData [object])
 
 ```
 var configData = {
