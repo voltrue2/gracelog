@@ -10,6 +10,10 @@ None
 
 #### Log file rotation name is now accurate to the log data in each file
 
+#### Bug fix in auto flushing
+
+The bug was that if there was no buffered log to flush in one level, it was exiting the auto flush w/o flushing the other level.
+
 ## Deprecated
 
 None

@@ -182,23 +182,23 @@ Logger.prototype._autoFlush = function (cb) {
 		// check enabled or not
 		if (!that.config.level[level]) {
 			// not enabled
-			return callback();
+			return next();
 		}
 		if (!flushed[level]) {
-			return callback();
+			return next();
 		}
 		var data = flushed[level];
-		var fileLog = function (next) {
+		var fileLog = function (moveOn) {
 			if (that.config.file) {
 				return file.log(level, data, next);
 			}
-			next();
+			moveOn();
 		};
-		var remoteLog = function (next) {
+		var remoteLog = function (moveOn) {
 			if (that.config.remote) {
 				return remote.log(level, data.messages.join('\n'), next);
 			}
-			next();
+			moveOn();
 		};
 		events.emit('output', address, that.name, level, data);
 		async.series([fileLog, remoteLog], callback);
