@@ -1,5 +1,4 @@
 var loggerSource = require('./logger');
-//var EventEmitter = require('events').EventEmitter;
 
 var configData = null;
 var prefix = '';

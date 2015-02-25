@@ -7,11 +7,12 @@ describe('Logging', function () {
 	it('Can set up logger', function () {
 
 		log.config({
+			rotationType: 'hour',
+			useTimestamp: true,
 			bufferSize: 0,
 			color: true,
 			console: true,
-			file: process.cwd() + '/test/logs/',
-			useTimestamp: true
+			file: process.cwd() + '/test/logs/'
 		});
 
 		logger = log.create('test');
@@ -137,7 +138,7 @@ describe('Logging', function () {
 	it('Can log an undefined value in a same line', function () {
 		logger.debug('this is a null >', undefined);
 	});
-
+	
 	it('Can remove all log files from the test (' + process.cwd() + '/test/logs/*.log)', function (done) {
 		var exec = require('child_process').exec;
 		exec('rm -rf ' + process.cwd() + '/test/logs/*.log', done);
