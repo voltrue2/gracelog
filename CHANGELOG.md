@@ -8,7 +8,9 @@ None
 
 ## Changed
 
-#### .table now displays parsed object instead of [Object object]
+#### .table() now displays parsed object instead of [Object object]
+
+#### .table() truncates strings longer than 50
 
 ## Deprecated
 

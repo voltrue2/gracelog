@@ -84,11 +84,11 @@ describe('Logging', function () {
 				value: 3,
 				language: 'ありがとうございます',
 				list: ['A', 'B', 'C'],
-				map: { c: 'c', d: 'd' }
+				map: { c: 'c', d: 'd', e: [0,1,2,3,4,5], f: { a:'A',b:'B',c:'C'}, g: '{one:1, two:2, three:3}' }
 			},
 			four: {
 				id: 3,
-				name: 'testFour',
+				name: 'testFour12345678901234567890123456789012345678901234567890123456789012345678901234567890',
 				value: 4,
 				language: 'Москве́',
 				map: { a: 'a', b: 'b' }
