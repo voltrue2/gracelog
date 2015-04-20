@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.4.1
+
+## Added
+
+None
+
+## Changed
+
+#### .table now displays parsed object instead of [Object object]
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.4.0
 
 ## Added
