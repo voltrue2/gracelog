@@ -10,6 +10,13 @@ npm install gracelog
 ```javascript
 var gracelog = require('gracelog');
 var logger = gracelog.create();
+logger.verbose('something not so important to log.');
+logger.debug('debug message to log...');
+logger.trace('logging message with stack trace.');
+logger.table([1,2,3,4]);
+logger.info('something important');
+logger.error('some error');
+logger.fatal('this is bad...');
 ```
 
 ### Configurations
