@@ -3,6 +3,18 @@ var log = require('gracelog');
 var logger;
 
 describe('Logging', function () {
+	
+	it('Can log w/o calling config()', function () {
+		var l = log.create();
+		l.verbose('boo');
+		l.debug('boo');
+		l.table(['boo', 'foo']);
+		l.trace('boo');
+		l.info('boo');
+		l.warn('boo');
+		l.error('boo');
+		l.fatal('boo');
+	});
 
 	it('Can set up logger', function () {
 
@@ -15,11 +27,11 @@ describe('Logging', function () {
 			file: process.cwd() + '/test/logs/'
 		});
 
-		logger = log.create('test');
-
 	});
 
 	it('Can actually log', function () {
+		
+		logger = log.create('test');
 
 		logger.verbose('verbose message');
 		logger.debug('debug message');

@@ -3,6 +3,11 @@ var loggerSource = require('./logger');
 var configData = null;
 var prefix = '';
 var appPrefix = '';
+var DEFAULT_CONF = {
+	console: true,
+	color: true,
+	level: '>= verbose'
+};
 
 module.exports.on = function (eventName, cb) {
 	loggerSource.events.on(eventName, cb);
@@ -31,11 +36,7 @@ module.exports.config = function (configIn) {
 
 	// there is no configurations, we create a default one
 	if (!configData) {
-		configData = {
-			console: true,
-			color: true,
-			level: '>= verbose'
-		};
+		configData = DEFAULT_CONF;
 		console.warn('<warn>[log] no configurations for log module found: created default configurations');
 		console.log('<verbose>[log] default configurations:\n', {
 			console: true,
@@ -171,3 +172,6 @@ module.exports.create = function (name) {
 module.exports.forceFlush = function (cb) {
 	loggerSource.forceFlush(cb);
 };
+
+// set up the module with default
+module.exports.config(DEFAULT_CONF);

@@ -1,14 +1,22 @@
 # gracelog
 
-### Access
+## Install
+
+```
+npm install gracelog
+```
+
+### How To Use
 ```javascript
 var gracelog = require('gracelog');
-var logger = gracelog.create('nameToBeDisplayed');
+var logger = gracelog.create();
 ```
 
 ### Configurations
 
 ### .config(configData [object])
+
+If you do not call this function, the module will be running in its default configurations.
 
 ```
 var configData = {
@@ -34,6 +42,7 @@ var configData = {
 };
 
 gracelog.config(configData);
+var logger = gracelog.create();
 ```
 
 ### Configurations for log levels
