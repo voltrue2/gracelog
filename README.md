@@ -31,6 +31,7 @@ var configData = {
 	"useTimestamp": <bool> // if given true, the logging time will be in Unix timestamp instead of the server time
 	"bufferSize": <int> // log data buffer size in memory (bytes),
 	"bufferFlushInterval": <int> // log data buffer auto flush interval in milliseconds,
+	"oneFile": <boolean> // if true, file logging will be combined to one file for all logging levels. default is false
 	"file": "<log directory path> or false"
 	"console": true or false,
 	"remote": <object> or null/false,

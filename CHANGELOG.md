@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.5.1
+
+## Added
+
+#### oneFile<bool> option added to config object
+
+If set `true`, file logging will be combined into one file instead of multipule files per logging level.
+
+## Changed
+
+None
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
 ## Version 0.4.1
 
 ## Added

@@ -18,7 +18,7 @@ module.exports.setup = function (config) {
 	ip.setup();
 	address = ip.get();
 	msg.setup(config);
-	file.setup(config.level, config.file, config.useTimestamp);
+	file.setup(config.level, config.file, config.oneFile);
 	remote.setup(config.remote);
 	today.setup(config.rotationType, config.useTimestamp);
 	buff.setup(config.bufferSize);
