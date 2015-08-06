@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.5.2
+
+## Added
+
+None
+
+## Changed
+
+#### Fixed: Removed unnecessary console.log() from the code
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.5.1
 
 ## Added
