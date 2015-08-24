@@ -1,5 +1,27 @@
 # Change log
 
+## Version 0.5.3
+
+## Added
+
+None
+
+## Changed
+
+#### Bug Fix: remote logging was broken
+
+Refer to github commit log:7bd47c92d1afb332869c7ae3f72d1656e6971ccf 
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.5.2
 
 ## Added
