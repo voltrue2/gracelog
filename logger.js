@@ -166,15 +166,15 @@ Logger.prototype._outputLog = function (levelName, bufferedMsg) {
 		// to make sure the log rotation is done accurately
 		file.log(levelName, bufferedMsg);
 	}
+	if (this.config.remote) {
+		remote.log(levelName, bufferedMsg);
+	}
 	var msges = bufferedMsg.filter(function (item) {
 		return item.msg;
 	});
 	var times = bufferedMsg.filter(function (item) {
 		return item.time;
 	});
-	if (this.config.remote) {
-		remote.log(levelName, msges.join('\n'));
-	}
 	events.emit('output', address, this.name, levelName, { messages: msges, timestamps: times });
 };
 
