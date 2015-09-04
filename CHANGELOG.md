@@ -8,9 +8,13 @@ None
 
 ## Changed
 
+#### Bug Fix: remote logging now supports cluster.
+
+Refer to github commit log: https://github.com/voltrue2/gracelog/commit/3280a91e71ac292b3887c3a0b564b776278aa78a
+
 #### Bug Fix: remote logging was broken
 
-Refer to github commit log:7bd47c92d1afb332869c7ae3f72d1656e6971ccf 
+Refer to github commit log: https://github.com/voltrue2/gracelog/commit/549bf4113170f18fd68d6a0c1515472e758a16ac
 
 ## Deprecated
 
