@@ -132,6 +132,7 @@ module.exports.isEnabled = function (levelName) {
 
 module.exports.setPrefix = function (p) {
 	appPrefix = p;
+	loggerSource.updatePrefix(appPrefix);
 };
 
 module.exports._setInternalPrefix = function (p) {
@@ -139,13 +140,7 @@ module.exports._setInternalPrefix = function (p) {
 };
 
 module.exports.create = function (name) {
-	var p = prefix;
-	if (prefix !== '' && appPrefix) {
-		p = prefix + '][' + appPrefix;
-	} else if (appPrefix) {
-		p = appPrefix;
-	}
-
+	var p = createPrefix(appPrefix);
 	// if name is not given, try to get the name from the caller file name
 	if (!name) {
 		var stack = new Error('').stack.split('\n');
@@ -175,3 +170,13 @@ module.exports.forceFlush = function (cb) {
 
 // set up the module with default
 module.exports.config(DEFAULT_CONF);
+
+function createPrefix(p) {
+	p = prefix;
+	if (prefix !== '' && appPrefix) {
+		p = prefix + '][' + appPrefix;
+	} else if (appPrefix) {
+		p = appPrefix;
+	}
+	return p;
+}

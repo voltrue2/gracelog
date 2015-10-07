@@ -191,7 +191,7 @@ Or
 
 ***
 
-##Events: *output*
+## Events: *output*
 
 ```
 gracelog.on('output', function (address, name, level, messageObj) {
@@ -204,27 +204,27 @@ gracelog.on('output', function (address, name, level, messageObj) {
 
 ***
 
-###.clean(callback [function])
+### .clean(callback [function])
 
 Cleans up logging data.
 
 Useful to invoke this function before exiting an application process.
 
-###.setPrefix(prefix [string])
+### .setPrefix(prefix [string])
 
 Sets a prefix for each logging.
 
-###.forceFlush(callback [function])
+### .forceFlush(callback [function])
 
 Forcefully flushes all buffered log data and write immediately.
 
-###.create(logName [*string])
+### .create(logName [*string])
 
 Returns an instance of logger object.
 
 If `logName` is not provided, it will default to the file name (full path) of script calling it.
 
-###.isEnabled(levelName [string])
+### .isEnabled(levelName [string])
 
 Returns Boolean. If given log level name is enabled, it returns true. 
 
@@ -232,19 +232,19 @@ Returns Boolean. If given log level name is enabled, it returns true.
 
 ## Logger Object
 
-###API: *verbose*
+### API: *verbose*
 
 <pre>
 void verbose(mixed data, [...])
 </pre>
 
-###API: *debug*
+### API: *debug*
 
 <pre>
 void debug(mixed data, [...])
 </pre>
 
-###API: *table*
+### API: *table*
 
 <pre>
 void table(mixed data, [...])
@@ -307,35 +307,35 @@ The output of the above code would be:
 +---------+--------------------+-----------------------------------------+------------------------+--------+----------+-----------------+
 ```
 
-###API: *trace*
+### API: *trace*
 
 `.trace()` outputs a stack trace for debugging.
 
-###API: *info*
+### API: *info*
 
 <pre>
 void info(mixed data, [...])
 </pre>
 
-###API: *warn*
+### API: *warn*
 
 <pre>
 void warn(mixed data, [...])
 </pre>
 
-###API: *warning*
+### API: *warning*
 Alias of warn
 <pre>
 void warning(mixed data, [...])
 </pre>
 
-###API: *error*
+### API: *error*
 
 <pre>
 void error(mixed data, [...])
 </pre>
 
-###API: *fatal*
+### API: *fatal*
 
 <pre>
 void fatal(mixed data, [...])

@@ -31,6 +31,12 @@ module.exports.setup = function (config) {
 
 module.exports.events = events;
 
+module.exports.updatePrefix = function (prefix) {
+	for (var i = 0, len = loggers.length; i < len; i++) {
+		loggers[i].prefix = prefix;
+	}
+};
+
 module.exports.create = function (prefix, name, config) {
 	var logger = new Logger(prefix, name, config);
 	loggers.push(logger);

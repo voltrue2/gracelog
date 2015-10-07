@@ -150,6 +150,11 @@ describe('Logging', function () {
 	it('Can log an undefined value in a same line', function () {
 		logger.debug('this is a null >', undefined);
 	});
+
+	it('Can change the prefix', function () {
+		log.setPrefix('TEST2');
+		logger.debug('prefix updated');
+	});
 	
 	it('Can remove all log files from the test (' + process.cwd() + '/test/logs/*.log)', function (done) {
 		var exec = require('child_process').exec;
