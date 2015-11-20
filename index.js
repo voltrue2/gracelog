@@ -168,9 +168,6 @@ module.exports.forceFlush = function (cb) {
 	loggerSource.forceFlush(cb);
 };
 
-// set up the module with default
-module.exports.config(DEFAULT_CONF);
-
 function createPrefix(p) {
 	p = prefix;
 	if (prefix !== '' && appPrefix) {

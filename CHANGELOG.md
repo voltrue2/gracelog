@@ -1,5 +1,15 @@
 # Change log
 
+## Version 0.6.0
+
+## Added
+
+None
+
+## Changed
+
+#### No longer auto-setup with default config
+
 ## Version 0.5.3
 
 ## Added
