@@ -13,8 +13,10 @@ var address = null;
 var loggers = [];
 // default is 5 seconds
 var autoFlushInterval = 5000;
+var configData;
 
 module.exports.setup = function (config) {
+	configData = config;
 	ip.setup();
 	address = ip.get();
 	msg.setup(config);
@@ -67,10 +69,10 @@ module.exports._timerFlush = function () {
 	}, autoFlushInterval);
 };
 
-function Logger(prefix, name, config) {
+function Logger(prefix, name) {
 	this.prefix = prefix;
 	this.name = name;
-	this.config = config || {};
+	this.config = configData || {};
 }
 
 Logger.prototype.verbose = function () {

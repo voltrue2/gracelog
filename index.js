@@ -161,7 +161,7 @@ module.exports.create = function (name) {
 		module.exports.config();
 	}
 
-	return loggerSource.create(p, name, configData);
+	return loggerSource.create(p, name);
 };
 
 module.exports.forceFlush = function (cb) {
