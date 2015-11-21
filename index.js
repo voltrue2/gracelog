@@ -38,11 +38,7 @@ module.exports.config = function (configIn) {
 	if (!configData) {
 		configData = DEFAULT_CONF;
 		console.warn('<warn>[log] no configurations for log module found: created default configurations');
-		console.log('<verbose>[log] default configurations:\n', {
-			console: true,
-			color: true,
-			level: '>= verbose'
-		});
+		console.log('<verbose>[log] default configurations:\n', configData);
 	}
 
 	// if config console is missing, we create it and set it to true as a default
@@ -159,6 +155,10 @@ module.exports.create = function (name) {
 
 	if (!name) {
 		name = 'unknown';
+	}
+
+	if (!configData) {
+		module.exports.config();
 	}
 
 	return loggerSource.create(p, name, configData);
