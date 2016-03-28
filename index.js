@@ -26,7 +26,7 @@ module.exports.removeAll = function (eventName) {
 };
 
 module.exports.hasListener = function (eventName) {
-	return loggersource.events.hasListener(eventName);
+	return loggerSource.events.hasListener(eventName);
 };
 
 

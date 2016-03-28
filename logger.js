@@ -1,4 +1,4 @@
-var async = require('async');
+var async = require('./lib/async');
 var ip = require('./lib/ip');
 var msg = require('./lib/msg');
 var file = require('./lib/file');

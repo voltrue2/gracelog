@@ -1,5 +1,23 @@
 # Change log
 
+## Version 0.6.3
+
+## Added
+
+None
+
+## Changed
+
+#### Removed all dependencies
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
 ## Version 0.6.0
 
 ## Added

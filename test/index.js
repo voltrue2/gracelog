@@ -1,5 +1,5 @@
 var assert = require('assert');
-var log = require('gracelog');
+var log = require('../index');
 var logger;
 
 describe('Logging', function () {
