@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.6.4
+
+## Added
+
+None
+
+## Changed
+
+#### Removed default warn log for no configurations
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.6.3
 
 ## Added
