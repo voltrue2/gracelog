@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.6.7
+
+## Added
+
+None
+
+## Changed
+
+#### Writting log data exception catch causes unexpected problem with cleaning up: Removed
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.6.6
 
 ## Added

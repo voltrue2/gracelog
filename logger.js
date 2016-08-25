@@ -147,26 +147,22 @@ Logger.prototype._handleLog = function (levelName, message) {
 
 	var logMsg = msg.create(this.prefix, this.name, levelName, message);
 
-	try {
-		// if console is enabled, we output to console
-		if (this.config.console) {
-			switch (levelName) {
-				case 'error':
-				case 'fatal':
-					console.error(logMsg.message);
-					break;
-				case 'warn':
-				case 'warning':
-					console.warn(logMsg.message);
-					break;
-				default:
-					console.log(logMsg.message);
-					break;
-				
-			}
+	// if console is enabled, we output to console
+	if (this.config.console) {
+		switch (levelName) {
+			case 'error':
+			case 'fatal':
+				console.error(logMsg.message);
+				break;
+			case 'warn':
+			case 'warning':
+				console.warn(logMsg.message);
+				break;
+			default:
+				console.log(logMsg.message);
+				break;
+			
 		}
-	} catch (e) {
-		// we do nothing
 	}
 
 	// add log message to buffer. buffer will flush overflowed log message
