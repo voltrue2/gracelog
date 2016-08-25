@@ -232,6 +232,15 @@ Returns Boolean. If given log level name is enabled, it returns true.
 
 ## Logger Object
 
+### API: *createTable*
+
+Creates a table data for logging from a javascript object.
+
+```
+var tableData = logger.createTable(sqlResult);
+logger.debug(tableData);
+```
+
 ### API: *verbose*
 
 <pre>

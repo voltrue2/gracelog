@@ -75,6 +75,11 @@ function Logger(prefix, name) {
 	this.config = configData || {};
 }
 
+Logger.prototype.createTable = function (obj) {
+	var table = new Table(obj);
+	return table.get();
+};
+
 Logger.prototype.verbose = function () {
 	this._handleLog.apply(this, ['verbose', arguments]);
 };
@@ -142,7 +147,7 @@ Logger.prototype._handleLog = function (levelName, message) {
 
 	var logMsg = msg.create(this.prefix, this.name, levelName, message);
 
-	try {	
+	try {
 		// if console is enabled, we output to console
 		if (this.config.console) {
 			switch (levelName) {
@@ -160,15 +165,15 @@ Logger.prototype._handleLog = function (levelName, message) {
 				
 			}
 		}
-
-		// add log message to buffer. buffer will flush overflowed log message
-		var bufferedMsg = buff.add(levelName, logMsg);
-		if (bufferedMsg) {
-			// this log level is enabled and there is flushed out log data
-			this._outputLog(levelName, bufferedMsg);
-		}
 	} catch (e) {
 		// we do nothing
+	}
+
+	// add log message to buffer. buffer will flush overflowed log message
+	var bufferedMsg = buff.add(levelName, logMsg);
+	if (bufferedMsg) {
+		// this log level is enabled and there is flushed out log data
+		this._outputLog(levelName, bufferedMsg);
 	}
 };
 

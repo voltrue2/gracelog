@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.6.6
+
+## Added
+
+#### logger.createTable() added
+
+## Changed
+
+#### Writting log data exception catch improved
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.6.5
 
 ## Added
