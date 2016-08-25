@@ -1,5 +1,23 @@
 # Change log
 
+## Version 0.6.5
+
+## Added
+
+None
+
+## Changed
+
+#### Improved exception catching on writting log data
+
+## Deprecated
+
+None
+
+## Removed
+
+***
+
 ## Version 0.6.4
 
 ## Added
