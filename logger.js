@@ -16,7 +16,7 @@ var autoFlushInterval = 5000;
 var configData;
 
 module.exports.setup = function (config) {
-	configData = config;
+	configData = config || { level: {} };
 	ip.setup();
 	address = ip.get();
 	msg.setup(config);
@@ -27,8 +27,12 @@ module.exports.setup = function (config) {
 	if (config.bufferFlushInterval) {
 		autoFlushInterval = config.bufferFlushInterval;
 	}
+	if (!configData.remote && !configData.file) {
+		return;
+	}
 	// auto flush log data at every x milliseconds
 	module.exports._timerFlush();
+	
 };
 
 module.exports.events = events;
@@ -121,6 +125,12 @@ Logger.prototype.fatal = function () {
 };
 
 Logger.prototype._handleLog = function (levelName, message) {
+	// check enabled or not
+	if (!this.config.level[levelName]) {
+		// not enabled
+		return;
+	}
+
 	// table is the same as debug
 	if (levelName === 'table') {
 		levelName = 'debug';
@@ -137,11 +147,6 @@ Logger.prototype._handleLog = function (levelName, message) {
 		if (levelName === 'error' || levelName === 'fatal') {
 			console.error.apply(console, message);
 		}
-		return;
-	}
-	// check enabled or not
-	if (!this.config.level[levelName]) {
-		// not enabled
 		return;
 	}
 
