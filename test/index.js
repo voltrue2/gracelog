@@ -45,12 +45,14 @@ describe('Logging', function () {
 
 	it('Can emit "output"', function (done) {
 		
+		var calledDone = false;
 		log.on('output', function (address, name, level, msg) {
 			assert(address);
 			assert(name);
 			assert(level);
 			assert(msg);
-			if (level === 'fatal') {
+			if (level === 'fatal' && !calledDone) {
+				calledDone = true;
 				done();
 			}
 		});
