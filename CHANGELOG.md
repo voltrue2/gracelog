@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.6.9
+
+## Added
+
+None
+
+## Changed
+
+#### Removed unused sample directory
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.6.8
 
 ## Added
