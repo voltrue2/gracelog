@@ -7,6 +7,7 @@ describe('Logging', function () {
 	it('Can log w/o calling config()', function () {
 		var l = log.create();
 		l.verbose('boo');
+		l.sys('boo');
 		l.debug('boo');
 		l.table(['boo', 'foo']);
 		l.trace('boo');
@@ -34,6 +35,7 @@ describe('Logging', function () {
 		logger = log.create('test');
 
 		logger.verbose('verbose message');
+		logger.sys('sys message');
 		logger.debug('debug message');
 		logger.trace('trace message');
 		logger.info('info message');
@@ -58,6 +60,7 @@ describe('Logging', function () {
 		});
 
 		logger.verbose('test "output"');
+		logger.sys('test "output"');
 		logger.debug('test "output"');
 		logger.trace('test "output"');
 		logger.warn('test "output"');
@@ -210,6 +213,7 @@ describe('Logging', function () {
 		var table1 = logger.createTable(test);
 		var table2 = logger.createTable(list);
 		logger.verbose(table1, table2);
+		logger.sys(table1, table2);
 		logger.debug(table1, table2);
 		logger.trace(table1, table2);
 		logger.info(table1, table2);

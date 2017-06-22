@@ -88,6 +88,10 @@ Logger.prototype.verbose = function () {
 	this._handleLog.apply(this, ['verbose', arguments]);
 };
 
+Logger.prototype.sys = function () {
+	this._handleLog.apply(this, ['sys', arguments]);
+};
+
 Logger.prototype.debug = function () {
 	this._handleLog.apply(this, ['debug', arguments]);
 };

@@ -11,6 +11,7 @@ npm install gracelog
 var gracelog = require('gracelog');
 var logger = gracelog.create();
 logger.verbose('something not so important to log.');
+logger.sys('sys message to log...');
 logger.debug('debug message to log...');
 logger.trace('logging message with stack trace.');
 logger.table([1,2,3,4]);
@@ -25,8 +26,6 @@ logger.fatal('this is bad...');
 
 If you do not call this function, the module will be running in its default configurations.
 
-```
-var configData = {
 	"rotationType": <string> // define log file rotation type [year|month|day|hour]. Default is day
 	"useTimestamp": <bool> // if given true, the logging time will be in Unix timestamp instead of the server time
 	"bufferSize": <int> // log data buffer size in memory (bytes),
@@ -40,6 +39,7 @@ var configData = {
 	"depth": <integer> // recursive depth of object
 	"level": [
 		"verbose",
+		"sys",
 		"debug",
 		"trace",
 		"info",
@@ -55,9 +55,9 @@ var logger = gracelog.create();
 
 ### Configurations for log levels
 
-There are 7 log levels in log module:
+There are 8 log levels in log module:
 
-`verbose, debug, trace, info, warn, error, fatal`
+`verbose, sys, debug, trace, info, warn, error, fatal`
 
 Example:
 
@@ -168,6 +168,7 @@ Or
 ```
 "level": [
 	"verbose",
+	"sys",
 	"debug",
 	"info",
 	"warn",
@@ -181,6 +182,7 @@ Or
 ```
 "level": {
     "verbose": <boolean>,
+    "sys": <boolean>,
     "debug": <boolean>,
     "info": <boolean>,
     "warn": <boolean>,
@@ -245,6 +247,12 @@ logger.debug(tableData);
 
 <pre>
 void verbose(mixed data, [...])
+</pre>
+
+### API: *sys*
+
+<pre>
+void sys(mixed data, [...])
 </pre>
 
 ### API: *debug*

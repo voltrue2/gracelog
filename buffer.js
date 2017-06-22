@@ -1,5 +1,6 @@
 var buff = {
 	verbose: { data: [], size: 0 },
+	sys: { data: [], size: 0 },
 	debug: { data: [], size: 0 },
 	trace: { data: [], size: 0 },
 	info: { data: [], size: 0 },

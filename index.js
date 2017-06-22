@@ -62,7 +62,16 @@ module.exports.config = function (configIn) {
 		// e.i. "level": ">= info"
 		var sep = configData.level.split(' ');
 		var operators = ['>', '<', '>=', '<=', '='];
-		var levels = ['verbose', 'debug', 'trace', 'info', 'warn', 'error', 'fatal'];
+		var levels = [
+			'verbose',
+			'sys',
+			'debug',
+			'trace',
+			'info',
+			'warn',
+			'error',
+			'fatal'
+		];
 		var level = {};
 		var op = null;
 		var lvl = null;
