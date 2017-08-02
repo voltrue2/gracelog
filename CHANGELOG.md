@@ -1,5 +1,25 @@
 # Change log
 
+## Version 0.7.1
+
+## Added
+
+None
+
+## Changed
+
+V8 Crankshaft optimizations
+
+## Deprecated
+
+None
+
+## Removed
+
+None
+
+***
+
 ## Version 0.6.9
 
 ## Added

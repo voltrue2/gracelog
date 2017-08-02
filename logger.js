@@ -85,56 +85,140 @@ Logger.prototype.createTable = function (obj) {
 };
 
 Logger.prototype.verbose = function () {
-	this._handleLog.apply(this, ['verbose', arguments]);
+	// check enabled or not
+	if (!this.config.level['verbose']) {
+		// not enabled
+		return;
+	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
+	this._handleLog.apply(this, ['verbose', messages]);
 };
 
 Logger.prototype.sys = function () {
-	this._handleLog.apply(this, ['sys', arguments]);
+	// check enabled or not
+	if (!this.config.level['sys']) {
+		// not enabled
+		return;
+	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
+	this._handleLog.apply(this, ['sys', messages]);
 };
 
 Logger.prototype.debug = function () {
-	this._handleLog.apply(this, ['debug', arguments]);
+	// check enabled or not
+	if (!this.config.level['debug']) {
+		// not enabled
+		return;
+	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
+	this._handleLog.apply(this, ['debug', messages]);
 };
 
 Logger.prototype.table = function () {
-	this._handleLog.apply(this, ['table', arguments]);
+	// check enabled or not
+	if (!this.config.level['table']) {
+		// not enabled
+		return;
+	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
+	this._handleLog.apply(this, ['table', messages]);
 };
 
 Logger.prototype.trace = function () {
+	// check enabled or not
+	if (!this.config.level['trace']) {
+		// not enabled
+		return;
+	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
 	var traceError = new Error('<stack trace>');
 	var trace = traceError.stack.replace('Error: ', '');
-	this._handleLog.apply(this, ['trace', arguments]);
+	this._handleLog.apply(this, ['trace', messages]);
 	this._handleLog('trace', [trace]);
 };
 
 Logger.prototype.info = function () {
-	this._handleLog.apply(this, ['info', arguments]);
+	// check enabled or not
+	if (!this.config.level['info']) {
+		// not enabled
+		return;
+	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
+	this._handleLog.apply(this, ['info', messages]);
 };
 
 Logger.prototype.warning = function () {
-	this._handleLog.apply(this, ['warn', arguments]);
+	// check enabled or not
+	if (!this.config.level['warn']) {
+		// not enabled
+		return;
+	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
+	this._handleLog.apply(this, ['warn', messages]);
 };
 
 // alias of warning
 Logger.prototype.warn = function () {
-	this._handleLog.apply(this, ['warn', arguments]);
-};
-
-Logger.prototype.error = function () {
-	this._handleLog.apply(this, ['error', arguments]);
-};
-
-Logger.prototype.fatal = function () {
-	this._handleLog.apply(this, ['fatal', arguments]);
-};
-
-Logger.prototype._handleLog = function (levelName, message) {
 	// check enabled or not
-	if (!this.config.level[levelName]) {
+	if (!this.config.level['warn']) {
 		// not enabled
 		return;
 	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
+	this._handleLog.apply(this, ['warn', messages]);
+};
 
+Logger.prototype.error = function () {
+	// check enabled or not
+	if (!this.config.level['error']) {
+		// not enabled
+		return;
+	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
+	this._handleLog.apply(this, ['error', messages]);
+};
+
+Logger.prototype.fatal = function () {
+	// check enabled or not
+	if (!this.config.level['fatal']) {
+		// not enabled
+		return;
+	}
+	var messages = [];
+	for (var i = 0, len = arguments.length; i < len; i++) {
+		messages.push(arguments[i]);
+	}
+	this._handleLog.apply(this, ['fatal', messages]);
+};
+
+Logger.prototype._handleLog = function (levelName, message) {
 	// table is the same as debug
 	if (levelName === 'table') {
 		levelName = 'debug';
