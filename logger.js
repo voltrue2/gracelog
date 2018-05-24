@@ -1,16 +1,18 @@
-var async = require('./lib/async');
-var ip = require('./lib/ip');
-var msg = require('./lib/msg');
-var file = require('./lib/file');
-var remote = require('./lib/remote');
-var Table = require('./lib/table');
-var today = require('./lib/today');
-var buff = require('./buffer');
-var EventEmitter = require('events').EventEmitter;
-var events = new EventEmitter();
-var address = null;
+'use strict';
+
+const async = require('./lib/async');
+const ip = require('./lib/ip');
+const msg = require('./lib/msg');
+const file = require('./lib/file');
+const remote = require('./lib/remote');
+const Table = require('./lib/table');
+const today = require('./lib/today');
+const buff = require('./buffer');
+const EventEmitter = require('events').EventEmitter;
+const events = new EventEmitter();
 // a list of logger objects for auto flush
-var loggers = [];
+const loggers = [];
+var address = null;
 // default is 5 seconds
 var autoFlushInterval = 5000;
 var configData;

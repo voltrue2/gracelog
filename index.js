@@ -1,13 +1,15 @@
-var loggerSource = require('./logger');
+'use strict';
 
-var configData = null;
-var prefix = '';
-var appPrefix = '';
+var loggerSource = require('./logger');
 var DEFAULT_CONF = {
 	console: true,
 	color: true,
 	level: '>= verbose'
 };
+
+var configData = null;
+var prefix = '';
+var appPrefix = '';
 
 module.exports.on = function (eventName, cb) {
 	loggerSource.events.on(eventName, cb);
