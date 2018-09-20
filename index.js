@@ -39,20 +39,16 @@ module.exports.config = function (configIn) {
 	// there is no configurations, we create a default one
 	if (!configData) {
 		configData = DEFAULT_CONF;
-		console.log('<warn>[log] no configurations for log module found: created default configurations');
-		console.log('<verbose>[log] default configurations:\n', configData);
 	}
 
 	// if config console is missing, we create it and set it to true as a default
 	if (configData.console === undefined && !configData.file && !configData.remote) {
 		configData.console = true;
-		console.log('<warn>[log] no logging method found: using "console" as the dedault');
 	}
 
 	// if config level is missing, we create a default one
 	if (!configData.level) {
 		configData.level = '>= verbose';
-		console.log('<warn>[log] no logging level found: using ">= verbose" as the dedault');
 	}
 
 	if (configData.level && typeof configData.level === 'string') {
