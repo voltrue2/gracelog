@@ -32,7 +32,8 @@ If you do not call this function, the module will be running in its default conf
 	"bufferFlushInterval": <int> // log data buffer auto flush interval in milliseconds,
 	"oneFile": <boolean> // if true, file logging will be combined to one file for all logging levels. default is false
 	"file": "<log directory path> or false"
-	"console": true or false,
+	"compress": true or false, // if true, objects will be printed as a single line output
+    "console": true or false,
 	"remote": <object> or null/false,
 	"color": true or false,
 	"showHidden": true or false, // show hidden properties of object

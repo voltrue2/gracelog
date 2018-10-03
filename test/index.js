@@ -25,7 +25,8 @@ describe('Logging', function () {
 			bufferSize: 0,
 			color: true,
 			console: true,
-			file: process.cwd() + '/test/logs/'
+			compress: true,
+            file: process.cwd() + '/test/logs/'
 		});
 
 	});
