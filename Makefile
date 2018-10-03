@@ -11,5 +11,5 @@ init:
 .PHONY: test
 test:
 	@echo 'test gracelog:'
-	./node_modules/mocha/bin/mocha test/index.js -s 10 -R spec -b
+	./node_modules/mocha/bin/mocha test/index.js --exit -s 10 -R spec -b
 
