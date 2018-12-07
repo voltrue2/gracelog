@@ -26,28 +26,28 @@ logger.fatal('this is bad...');
 
 If you do not call this function, the module will be running in its default configurations.
 
-	"rotationType": <string> // define log file rotation type [year|month|day|hour]. Default is day
-	"useTimestamp": <bool> // if given true, the logging time will be in Unix timestamp instead of the server time
-	"bufferSize": <int> // log data buffer size in memory (bytes),
-	"bufferFlushInterval": <int> // log data buffer auto flush interval in milliseconds,
-	"oneFile": <boolean> // if true, file logging will be combined to one file for all logging levels. default is false
-	"file": "<log directory path> or false"
-	"compress": true or false, // if true, objects will be printed as a single line output
+    "rotationType": <string> // define log file rotation type [year|month|day|hour]. Default is day
+    "useTimestamp": <bool> // if given true, the logging time will be in Unix timestamp instead of the server time
+    "bufferSize": <int> // log data buffer size in memory (bytes),
+    "bufferFlushInterval": <int> // log data buffer auto flush interval in milliseconds,
+    "oneFile": <boolean> // if true, file logging will be combined to one file for all logging levels. default is false
+    "file": "<log directory path> or false"
+    "compress": true or false, // if true, objects will be printed as a single line output
     "console": true or false,
-	"remote": <object> or null/false,
-	"color": true or false,
-	"showHidden": true or false, // show hidden properties of object
-	"depth": <integer> // recursive depth of object
-	"level": [
-		"verbose",
-		"sys",
-		"debug",
-		"trace",
-		"info",
-		"warn",
-		"error",
-		"fatal",
-	]
+    "remote": <object> or null/false,
+    "color": true or false,
+    "showHidden": true or false, // show hidden properties of object
+    "depth": <integer> // recursive depth of object
+    "level": [
+        "verbose",
+        "sys",
+        "debug",
+        "trace",
+        "info",
+        "warn",
+        "error",
+        "fatal",
+    ]
 };
 
 gracelog.config(configData);
@@ -64,14 +64,14 @@ Example:
 
 ```
 var configData = {
-	"console": true,
-	"color": true,
-	"level": [
-		"info",
-		"warn",
-		"error",
-		"fatal"
-	]
+    "console": true,
+    "color": true,
+    "level": [
+        "info",
+        "warn",
+        "error",
+        "fatal"
+    ]
 };
 
 gracelog.confoig(configData);
@@ -83,9 +83,9 @@ The same configurations can be done by:
 
 ```
 var configData = {
-	"console": true,
-	"color": true,
-	"level": ">= info"
+    "console": true,
+    "color": true,
+    "level": ">= info"
 };
 
 gracelog.config(configData);
@@ -118,10 +118,10 @@ If the configurations for `remote` logging is provided, gracelog sends log data 
 ```
 var gracelog = require('gracelog');
 var configData = {
-	remote: {
-		host: 'localhost',
-		port: 8000
-	}
+    remote: {
+        host: 'localhost',
+        port: 8000
+    }
 };
 gracelog.config(configData);
 ```
@@ -168,13 +168,13 @@ Or
 
 ```
 "level": [
-	"verbose",
-	"sys",
-	"debug",
-	"info",
-	"warn",
-	"error",
-	"fatal"
+    "verbose",
+    "sys",
+    "debug",
+    "info",
+    "warn",
+    "error",
+    "fatal"
 ]
 ```
 
@@ -198,10 +198,10 @@ Or
 
 ```
 gracelog.on('output', function (address, name, level, messageObj) {
-	// address: IP address of the server
-	// name: the name that was set on gracelog.create()
-	// level: verbose, debug, info, warn, error, or fatal
-	// messageObj: { message, timestamp }
+    // address: IP address of the server
+    // name: the name that was set on gracelog.create()
+    // level: verbose, debug, info, warn, error, or fatal
+    // messageObj: { message, timestamp }
 });
 ```
 
