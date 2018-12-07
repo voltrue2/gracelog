@@ -33,7 +33,7 @@ module.exports.hasListener = function (eventName) {
 
 
 module.exports.config = function (configIn) {
-    
+
     configData = configIn;
 
     // there is no configurations, we create a default one
@@ -110,13 +110,13 @@ module.exports.config = function (configIn) {
         }
         configData.level = levelObj;
     }
-    
+
     // for backward compatibility:
     if (configData.level.warning) {
         configData.level.warn = configData.level.warning;
         delete configData.level.warning;
     }
-    
+
     // set up loggerSource
     loggerSource.setup(configData);
 };
