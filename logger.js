@@ -19,6 +19,7 @@ var configData;
 
 module.exports.setup = function (config) {
     configData = config || { level: {} };
+    configData.stackdriver = config.stackdriver || false;
     ip.setup();
     address = ip.get();
     msg.setup(config);
@@ -198,6 +199,34 @@ Logger.prototype.error = function () {
     if (!this.config.level['error']) {
         // not enabled
         return;
+    }
+    if (configData.stackdriver) {
+      // stackdriver specific formatting....
+      // https://cloud.google.com/error-reporting/docs/formatting-error-messages
+      var contexts = [];
+      var errStack = '';
+      for (var j = 0, jen = arguments.length; j < jen; j++) {
+        if (arguments[j] instanceof Error) {
+          errStack += arguments[j].stack;
+          continue;
+        }
+        contexts.push(arguments[j]);
+      }
+      var formatted = {
+        eventTime: new Date(),
+        serviceContext: { service: this.prefix + ':' + this.name },
+        message: errStack,
+        context: {
+          message: contexts,
+          reportLocation: {
+            filePath: this.name,
+            lineNumber: 0,
+            functionName: 'unknown'
+          }
+        }
+      };
+      this._handleLog.apply(this, ['error', [formatted]]);
+      return;
     }
     var messages = [];
     for (var i = 0, len = arguments.length; i < len; i++) {

@@ -26,6 +26,7 @@ logger.fatal('this is bad...');
 
 If you do not call this function, the module will be running in its default configurations.
 
+    "stackdriver": <bool> // logger.error will use stackdriver format: https://cloud.google.com/error-reporting/docs/formatting-error-messages
     "rotationType": <string> // define log file rotation type [year|month|day|hour]. Default is day
     "useTimestamp": <bool> // if given true, the logging time will be in Unix timestamp instead of the server time
     "bufferSize": <int> // log data buffer size in memory (bytes),
