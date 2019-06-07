@@ -145,19 +145,19 @@ module.exports._setInternalPrefix = function (p) {
 module.exports.create = function (name) {
     var p = createPrefix(appPrefix);
     // if name is not given, try to get the name from the caller file name
-    if (!name) {
-        var stack = new Error('').stack.split('\n');
-        var callerFile;
-        // i starts from one because index 0 is always "Error"
-        for (var i = 1, len = stack.length; i < len; i++) {
-            if (stack[i].indexOf('gracelog/index.js') === -1) {
-                callerFile = stack[i];
-                break;
-            }
+    var stack = new Error('').stack.split('\n');
+    var callerFile;
+    var filepath;
+    // i starts from one because index 0 is always "Error"
+    for (var i = 1, len = stack.length; i < len; i++) {
+        if (stack[i].indexOf('gracelog/index.js') === -1) {
+            callerFile = stack[i];
+            break;
         }
-        if (callerFile) {
-            name = callerFile.substring(callerFile.indexOf('/'), callerFile.lastIndexOf('.'));
-        }
+    }
+    if (callerFile) {
+        filepath = callerFile.substring(callerFile.indexOf('/'), callerFile.lastIndexOf('.'));
+        name = filepath;
     }
 
     if (!name) {
@@ -168,7 +168,7 @@ module.exports.create = function (name) {
         module.exports.config();
     }
 
-    return loggerSource.create(p, name);
+    return loggerSource.create(p, name, filepath);
 };
 
 module.exports.forceFlush = function (cb) {

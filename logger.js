@@ -22,13 +22,13 @@ module.exports.setup = function (config) {
     configData.stackdriver = config.stackdriver || false;
     ip.setup();
     address = ip.get();
-    msg.setup(config);
-    file.setup(config.level, config.file, config.oneFile);
-    remote.setup(config.remote);
-    today.setup(config.rotationType, config.useTimestamp);
-    buff.setup(config.bufferSize);
-    if (config.bufferFlushInterval) {
-        autoFlushInterval = config.bufferFlushInterval;
+    msg.setup(configData);
+    file.setup(configData.level, configData.file, configData.oneFile);
+    remote.setup(configData.remote);
+    today.setup(configData.rotationType, configData.useTimestamp);
+    buff.setup(configData.bufferSize);
+    if (configData.bufferFlushInterval) {
+        autoFlushInterval = configData.bufferFlushInterval;
     }
     if (!configData.remote && !configData.file) {
         return;
@@ -45,8 +45,8 @@ module.exports.updatePrefix = function (prefix) {
     }
 };
 
-module.exports.create = function (prefix, name, config) {
-    var logger = new Logger(prefix, name, config);
+module.exports.create = function (prefix, name, filepath) {
+    var logger = new Logger(prefix, name, filepath);
     loggers.push(logger);
     return logger;
 };
@@ -75,9 +75,10 @@ module.exports._timerFlush = function () {
     }, autoFlushInterval);
 };
 
-function Logger(prefix, name) {
+function Logger(prefix, name, filepath, config) {
     this.prefix = prefix;
     this.name = name;
+    this.filepath = filepath || 'unknown';
     this.config = configData || {};
 }
 
@@ -200,32 +201,8 @@ Logger.prototype.error = function () {
         // not enabled
         return;
     }
-    if (configData.stackdriver) {
-      // stackdriver specific formatting....
-      // https://cloud.google.com/error-reporting/docs/formatting-error-messages
-      var contexts = [];
-      var errStack = '';
-      for (var j = 0, jen = arguments.length; j < jen; j++) {
-        if (arguments[j] instanceof Error) {
-          errStack += arguments[j].stack;
-          continue;
-        }
-        contexts.push(arguments[j]);
-      }
-      var formatted = {
-        eventTime: new Date(),
-        serviceContext: { service: this.prefix + ':' + this.name },
-        message: errStack,
-        context: {
-          message: contexts,
-          reportLocation: {
-            filePath: this.name,
-            lineNumber: 0,
-            functionName: 'unknown'
-          }
-        }
-      };
-      this._handleLog.apply(this, ['error', [formatted]]);
+    var handled = _handleOptionalFmt(this, 'error', arguments);
+    if (handled) {
       return;
     }
     var messages = [];
@@ -241,12 +218,48 @@ Logger.prototype.fatal = function () {
         // not enabled
         return;
     }
+    var handled = _handleOptionalFmt(this, 'fatal', arguments);
+    if (handled) {
+      return;
+    }
     var messages = [];
     for (var i = 0, len = arguments.length; i < len; i++) {
         messages.push(arguments[i]);
     }
     this._handleLog.apply(this, ['fatal', messages]);
 };
+
+function _handleOptionalFmt(that, level, args) {
+    if (that.config.stackdriver) {
+      // stackdriver specific formatting....
+      // https://cloud.google.com/error-reporting/docs/formatting-error-messages
+      var contexts = [];
+      var errStack = '';
+      for (var j = 0, jen = args.length; j < jen; j++) {
+        if (args[j] instanceof Error) {
+          errStack += args[j].stack;
+          continue;
+        }
+        contexts.push(args[j]);
+      }
+      var formatted = JSON.stringify({
+        eventTime: new Date(new Date().toUTCString()),
+        serviceContext: { service: that.prefix + ':' + that.name },
+        message: errStack,
+        context: {
+          message: contexts.join(' '),
+          reportLocation: {
+            filePath: that.filepath,
+            lineNumber: 0,
+            functionName: 'unknown'
+          }
+        }
+      });
+      that._handleLog.apply(that, [level, [formatted]]);
+      return true;
+    }
+    return false;
+}
 
 Logger.prototype._handleLog = function (levelName, message) {
     // table is the same as debug
