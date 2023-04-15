@@ -8,7 +8,7 @@
   "url": "https://github.com/voltrue2/gracelog.git"
  },
  "devDependencies": {
-  "mocha": "5.2.0"
+  "mocha": "10.2.0"
  },
  "engine": "node >= 0.10.20",
  "contributors": [],
